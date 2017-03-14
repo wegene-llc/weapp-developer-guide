@@ -9,5 +9,5 @@
 ## 开发你的第一个轻应用 ##
 
 - 查阅[开发者文档](https://github.com/wegene-llc/weapp-developer-guide/blob/master/docs/weapp-developer-guide.md)了解如何创建一个轻应用
-- 下载示例代码快速开始开发
+- 下载[示例代码](https://github.com/wegene-llc/weapp-developer-guide/tree/master/examples)快速开始开发
 - 下载测试数据测试你的应用
