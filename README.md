@@ -11,3 +11,9 @@
 - 查阅[开发者文档](https://github.com/wegene-llc/weapp-developer-guide/blob/master/docs/weapp-developer-guide.md)了解如何创建一个轻应用
 - 下载[示例代码](https://github.com/wegene-llc/weapp-developer-guide/tree/master/examples)快速开始开发
 - 下载测试数据测试你的应用
+- 测试阶段需要[邮件](mailto:api@wegene.com?subject=轻应用开发者权限申请)申请开发者权限
+- 查阅[发布指南]()发布应用
+
+---
+
+## 扫描二维码，进入 WeGene 轻应用开发者讨论群 ##
