@@ -292,6 +292,8 @@ suppressMessages(library(rjson))
 }
 ```
 
+**开发者可以在[此处](https://github.com/wegene-llc/weapp-developer-guide/tree/master/data)下载示例数据以便在开发过程中进行测试。**
+
 ---
 
 ## Q & A ##
