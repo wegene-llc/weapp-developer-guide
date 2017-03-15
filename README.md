@@ -16,4 +16,4 @@
 
 ---
 
-## 扫描二维码，进入 WeGene 轻应用开发者讨论群 ##
+开发过程中如果遇到任何问题，欢迎[邮件](mailto:api@wegene.com?subject=轻应用开发问题)咨询，或在 [WeGene 社区](https://www.wegene.com/group/%E5%BC%80%E5%8F%91%E8%80%85%E5%B0%8F%E7%BB%84)发帖讨论。
