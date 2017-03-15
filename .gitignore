@@ -1,7 +1,6 @@
 */indexes/
 *.idx
 .DS_Store
-*.zip
 *.pyc
 
 # History files
