@@ -224,7 +224,7 @@ suppressMessages(library(rjson))
 
 **依据上面介绍的各个字段，根据申请应用时要求的入参，可以分为两种情况：**
 
-- 轻应用申请了用户的全部基因位点数据 - 此时，传入的数据是通过 `gzip` 压缩并经过了 `base64` 编码的基因序列数据。需要配合相应的注释文件进行解析。如何处理编码后的基因序列并解析可以参考示例代码中的 `wegene_utils.py`或`wegene_utils.R`，过程中需要的参考注释文件（即 `indexes` 文件夹）会自动存在于轻应用的运行环境下，无需打包在代码包中上传。在开发测试过程中，你可以在[这里](https://github.com/wegene-llc/weapp-developer-guide/blob/master/data/indexes.zip)下载到测试用的参考注释文件。
+- 轻应用申请了用户的全部基因位点数据 - 此时，传入的数据是通过 `gzip` 压缩并经过了 `base64` 编码的基因序列数据。需要配合相应的注释文件进行解析。如何处理编码后的基因序列并解析可以参考示例代码中的 [`wegene_utils.py`](https://github.com/wegene-llc/weapp-developer-guide/blob/master/examples/python/scaffold-app/wegene_utils.py)或[`wegene_utils.R`](https://github.com/wegene-llc/weapp-developer-guide/blob/master/examples/r/scaffold-app/wegene_utils.R)，过程中需要的参考注释文件（即 `indexes` 文件夹）会自动存在于轻应用的运行环境下，无需打包在代码包中上传。在开发测试过程中，你可以在[这里](https://github.com/wegene-llc/weapp-developer-guide/blob/master/data/indexes.zip)下载到测试用的参考注释文件。
 
 ```json
 {
