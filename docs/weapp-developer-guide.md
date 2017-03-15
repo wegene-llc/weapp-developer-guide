@@ -156,8 +156,8 @@ suppressMessages(library(rjson))
 | data | `gzip` 压缩并经过了 `base64` 编码的全部位点数据，需要配合index文件解析 | `"data": "xfgakljdflkja..."` | |
 | rsxxxxx | 某个rs位点上的基因型数据 | `"rs671": "AA"` | |
 | sex | 性别 | `"sex": 1` | `0`（缺失）, `1`（男）, `2`（女） |
-| age | 年龄数据 | `"age": 173007321` | 以 Linux Timestamp 存储的生日 | |
-| haplogroup | 单倍群 | `"haplogroup": {"mt": "A", "y": "O1"}` | 有 `mt`、`y`两个单倍群数据 |
+| age | 年龄数据 | `"age": 27` | 用户填写的年龄，如果大于`100`说明用户未填写 | |
+| haplogroup | 单倍群 | `"haplogroup": {"y": {"haplogroup": "O2a1c1a"}, "mt": {"haplogroup": "M10a1a"}}` | 有 `mt`、`y`两个单倍群数据 |
 | ancestry | 祖源 | `"ancestry": {"block": {"xxx": "0.25"}, "area": {"xxx": "0.2"}}` | `block` 为大区域祖源数据，`area` 为小区域祖源数据，值存储为字符串格式 |
 
 - 祖源数据中，各大区域的可能值如下表——
@@ -229,25 +229,29 @@ suppressMessages(library(rjson))
 ```json
 {
   "inputs" : {
-    "age" : 173007321,
+    "age" : 27,
     "data" : "xfgakljdflkja...",
     "sex" : 1,
     "haplogroup" : {
-      "mt" : "A",
-      "y" : "O1"
+      "y" : {
+        "haplogroup" : "O2a1c1a"
+      },
+      "mt" : {
+        "haplogroup" : "M10a1a"
+      }
     },
     "ancestry" : {
       "block" : {
-        "southeast_asia" : "0.000020",
         "else_asia" : "0.000050",
-        "...": "0.000050"
+        "..." : "0.000050",
+        "southeast_asia" : "0.000020"
       },
+      "format" : "wegene_affy_2",
       "area" : {
         "uygur" : "0.000010",
         "russian" : "0.000010",
         "..." : "0.000010"
-      },
-    "format" : "wegene_affy_2"
+      }
     }
   }
 }
@@ -260,9 +264,14 @@ suppressMessages(library(rjson))
 {
   "inputs" : {
     "sex" : 1,
+    "age": 27,
     "haplogroup" : {
-      "mt" : "A",
-      "y" : "O1"
+      "y" : {
+        "haplogroup" : "O2a1c1a"
+      },
+      "mt" : {
+        "haplogroup" : "M10a1a"
+      }
     },
     "rs12203592" : "CA",
     "rs671" : "--",
