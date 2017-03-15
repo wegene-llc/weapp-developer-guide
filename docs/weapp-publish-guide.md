@@ -27,24 +27,24 @@ your_weapp_project_folder
 
 最后，选择上传你的打包工程文件，点击下一步。
 
-[!上传代码界面](http://ok2je8vp1.bkt.clouddn.com/step1.png)
-[!批量添加位点](http://ok2je8vp1.bkt.clouddn.com/step2.png)
+![上传代码界面](http://ok2je8vp1.bkt.clouddn.com/step1.png)
+![批量添加位点](http://ok2je8vp1.bkt.clouddn.com/step2.png)
 
 #### 2. 构建应用 ####
 
 完成代码上传后，你会进入代码构建页面。在这里，WeGene 会自动处理你的代码的构建与部署，开发者无需进行任何操作。通常，构建会在 30 分钟内完成并通知开发者构建的结果。如果构建过程中遇到任何问题（如没有必须的主计算脚本等），我们会将构建的错误日志输出以供你在重新编辑时修改。如果构建成功，你可以进入下一步测试应用。在整个构建等待中，你可以随时关闭页面，并从微解读“我发起的”界面中进入查看。
 
-[!构建错误界面](http://ok2je8vp1.bkt.clouddn.com/step3.png)
+![构建错误界面](http://ok2je8vp1.bkt.clouddn.com/step3.png)
 
 #### 3. 测试应用 ####
 
 应用构建成功表示工程没有配置上的错误，但在应用执行过程中仍有可能遇到程序逻辑错误。因此，我们要求每个应用在发布前必须通过测试。在测试界面中，点击`开始测试`按钮进行测试。此时，我们会根据应用申请的输入参数，向应用发送测试数据。只有成功运行，未返回错误信息的应用才可以进入下一步发布。如果在此过程中应用返回了任何错误，你需要修改你的工程后重新构建应用并测试。
 
-[!测试界面](http://ok2je8vp1.bkt.clouddn.com/step4.png)
-[!通过测试界面](http://ok2je8vp1.bkt.clouddn.com/step5.png)
+![测试界面](http://ok2je8vp1.bkt.clouddn.com/step4.png)
+![通过测试界面](http://ok2je8vp1.bkt.clouddn.com/step5.png)
 
 #### 4. 发布应用 ####
 
 通过测试的应用可以被发布。点击`发布应用`后，需要等待管理员审核通过，应用方可上架。在等待审核期间，开发者本人可以从微解读“我发起的”界面进入应用并测试。如果管理员审核不通过，则开发者需要根据管理员的反馈进行相应修改后再次发布。
 
-[!发布界面](http://ok2je8vp1.bkt.clouddn.com/step6.png)
+![发布界面](http://ok2je8vp1.bkt.clouddn.com/step6.png)
