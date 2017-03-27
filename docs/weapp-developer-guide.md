@@ -153,8 +153,8 @@ suppressMessages(library(rjson))
 | 字段名 | 字段说明 | 举例 | 值选项 |
 |:-----:|:----:|:----:|:----:|
 | format | 基因数据的格式 | `"format": "wegene_affy_2"` | `wegene_affy_2`, `23andme`, `ancestry`, `ancestry_2` |
-| data | `gzip` 压缩并经过了 `base64` 编码的全部位点数据，需要配合index文件解析 | `"data": "xfgakljdflkja..."` | |
-| rsxxxxx | 某个rs位点上的基因型数据 | `"rs671": "AA"` | |
+| data | `gzip` 压缩并经过了 `base64` 编码的全部位点数据，需要配合`index`文件解析 | `"data": "xfgakljdflkja..."` | |
+| RSxxxxx | 某个RS位点上的基因型数据，**请注意：`RS`为大写** | `"RS671": "AA"` | |
 | sex | 性别 | `"sex": 1` | `0`（缺失）, `1`（男）, `2`（女） |
 | age | 年龄数据 | `"age": 27` | 用户填写的年龄，如果大于`100`说明用户未填写 | |
 | haplogroup | 单倍群 | `"haplogroup": {"y": {"haplogroup": "O2a1c1a"}, "mt": {"haplogroup": "M10a1a"}}` | 有 `mt`、`y`两个单倍群数据 |
@@ -273,9 +273,9 @@ suppressMessages(library(rjson))
         "haplogroup" : "M10a1a"
       }
     },
-    "rs12203592" : "CA",
-    "rs671" : "--",
-    "rs..." : "AA",
+    "RS12203592" : "CA",
+    "RS671" : "--",
+    "RS..." : "AA",
     "ancestry" : {
       "block" : {
         "southeast_asia" : "0.000020",
