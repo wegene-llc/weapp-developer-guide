@@ -43,6 +43,7 @@ tryCatch({
 
     # Return your results simply by cat it out.
     # Do not use print as it will contain line number.
+    # You can only use cat for once - or the followed results will be ignored
     cat(result)
 }, error = function(e) {
     # Any error msgs should be thrown out from stderr, so you will receive log

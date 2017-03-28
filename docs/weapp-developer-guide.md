@@ -113,7 +113,7 @@ tryCatch({
 
 **与此同时，计算过程中打印出的结论或异常信息有可能对用户可见，请以对用户友好的形式输出。例如，如果输入的数据不全，打印 `很抱歉，您的部分数据缺失，暂时无法计算`，而非`data missing xxxx`**
 
-**为了方便测试从`body = sys.stdin.read()`或`body <- readLines(file('stdin', 'r'), warn = F, n = 1)`开始的全部流程，假设您已经有了测试数据`demo.json`，可以通过命令`cat demo.json | python main.py` 来模拟输入**
+**为了方便测试从`body = sys.stdin.read()`或`body <- readLines(file('stdin', 'r'), warn = F, n = 1)`开始的全部流程，为避免开发者需要每次都提交构建后再测试，开发者可以根据我们提供的测试数据模拟生成一份应用需要的输入数据`demo.json`，并通过命令`cat demo.json | python main.py` 或 `cat demo.json | Rscript main.R` 来本地进行模拟测试**
 
 #### 4.2 第三方依赖 ####
 

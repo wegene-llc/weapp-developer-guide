@@ -39,7 +39,7 @@ try:
     # result = do_something(user_genome)
     result = '我是一个结论\n我是结论的第二行'
 
-    # 输出给用户的结果只需要通过 print 输出即可
+    # 输出给用户的结果只需要通过 print 输出即可，print只可调用一次
     print result
 except Exception as e:
     # 错误信息需要被从 stderr 中输出，否则会作为正常结果输出
