@@ -33,7 +33,8 @@ tryCatch({
     # Else if you are requiring other data, simply parse input string
     # library(rjson)
     # inputs <- fromJSON(body)$inputs
-    # rs671 <- inputs$rs671
+    # Please be aware that RSIDs are in capital letters
+    # RS671 <- inputs$RS671
 
 
     # Now your calculation goes here, do whatever you like
