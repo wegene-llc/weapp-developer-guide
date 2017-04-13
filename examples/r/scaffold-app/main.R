@@ -33,9 +33,11 @@ tryCatch({
     # Else if you are requiring other data, simply parse input string
     # library(rjson)
     # inputs <- fromJSON(body)$inputs
-    # Please be aware that RSIDs are in capital letters
-    # RS671 <- inputs$RS671
-
+    # Please be aware that RSIDs are in capital letters and may not exist if the
+    #   SNP is not tested
+    # if(!(is.null(inputs$RS671)){
+    #  RS671 <- inputs$RS671
+    #}
 
     # Now your calculation goes here, do whatever you like
     # result = do_something(user_genome)
