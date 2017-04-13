@@ -7,7 +7,7 @@ source('wegene_utils.R')
 
 
 # When required data is not whole genome, the input is a json string:
-#    {"inputs": {"rs671": "AA", "rs12203592": "CA"}}
+#    {"inputs": {"RS671": "AA", "RS12203592": "CA", "format": "wegene_affy_2"}}
 
 # When required data is whole genome,
 # the input is a json string contains the compressed genome data:

@@ -11,7 +11,7 @@ from wegene_utils import process_raw_genome_data
 
 '''
 当输入是部分位点时, 基因位点数据以 json 形式输入:
-    {"inputs": {"rs671": "AA", "rs12203592": "CA"}}
+    {"inputs": {"RS671": "AA", "RS12203592": "CA", "format": "wegene_affy_2"}}
 
 当输入全部位点时，全部位点对应的字符串序列会被 gzip 压缩并以 base64 转码，
 转码前的数据在 data 域中
