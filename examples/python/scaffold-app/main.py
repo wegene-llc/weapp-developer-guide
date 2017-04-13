@@ -33,7 +33,7 @@ try:
     user_genome = process_raw_genome_data(inputs)
 
     # 如果输入的数据是部分位点数据，你可以直接进行使用，注意 RSID 是大写且要求的位点在没有检测
-    #  的情况下 key 可能不存在
+    # 的情况下 key 可能不存在
     # inputs = json.loads(body)['inputs']
     # if 'RS671' in inputs.keys():
     #   rs671 = inputs['RS671']

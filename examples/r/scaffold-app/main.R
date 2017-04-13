@@ -37,7 +37,7 @@ tryCatch({
     #   SNP is not tested
     # if(!(is.null(inputs$RS671)){
     #  RS671 <- inputs$RS671
-    #}
+    # }
 
     # Now your calculation goes here, do whatever you like
     # result = do_something(user_genome)
