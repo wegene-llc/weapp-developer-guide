@@ -16,7 +16,7 @@ source('wegene_utils.R')
 
 
 # Inputs always come from stdin
-body <- readLines(file('stdin', 'r'), warn = F, n = 1)
+body <- readLines(file('stdin', 'r'), warn = F)
 
 tryCatch({
     # Assume the required data is whole genome, parse it into an R object first

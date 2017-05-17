@@ -96,7 +96,7 @@ except Exception as e:
 
 ```r-language
 # 永远从 stdin 读取输入
-body <- readLines(file('stdin', 'r'), warn = F, n = 1)
+body <- readLines(file('stdin', 'r'), warn = F)
 
 tryCatch({
 	# 解析输入的 json 数据
