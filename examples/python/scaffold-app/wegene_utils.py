@@ -22,18 +22,19 @@ def parse_genome_string(genome_str, genome_format):
         # Do not change the default path below if you wish to use those
         with open('./indexes/index_' + genome_format + '.idx', 'r') as idx_f:
             for line in idx_f:
-                fields = line.strip().split('\t')
-                index_pos = fields[0]
-                rsid = fields[1]
-                chromosome = fields[2]
-                position = fields[3]
-                start_pos = int(index_pos) * 2
-                genome_dict[rsid] = {
-                    'genotype': sort_genotype(
-                                    genome_str[start_pos:start_pos+2]),
-                    'chromosome': chromosome,
-                    'position': position
-                }
+                if not line.startswith('NA'):
+                    fields = line.strip().split('\t')
+                    index_pos = fields[0]
+                    rsid = fields[1]
+                    chromosome = fields[2]
+                    position = fields[3]
+                    start_pos = int(index_pos) * 2
+                    genome_dict[rsid] = {
+                        'genotype': sort_genotype(
+                                        genome_str[start_pos:start_pos+2]),
+                        'chromosome': chromosome,
+                        'position': position
+                    }
         return genome_dict
     except Exception as e:
         sys.stderr.write('Error on file {} line {} '.format(
