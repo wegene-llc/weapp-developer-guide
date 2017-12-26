@@ -165,7 +165,7 @@ suppressMessages(library(rjson))
 | RSxxxxx | 某个RS位点上的基因型数据，**请注意：`RS`为大写，且在请求的某个位点没有检测（非未检出）的情况下，不会被返回** | `"RS671": "AA"（正常返回）`、`"RS672": "--"（未检出）` | |
 | sex | 性别 | `"sex": 1` | `0`（缺失）, `1`（男）, `2`（女） |
 | age | 年龄数据 | `"age": 27` | 用户填写的年龄，如果大于`100`说明用户未填写 | |
-| haplogroup | 单倍群 | `"haplogroup": {"y": {"haplogroup": "O2a1c1a"}, "mt": {"haplogroup": "M10a1a"}}` | 有 `mt`、`y`两个单倍群数据 |
+| haplogroup | 单倍群 | 男性：`"haplogroup": {"y": {"haplogroup": "O2a1c1a"}, "mt": {"haplogroup": "M10a1a"}}`, 女性：`"haplogroup": {"mt": {"haplogroup": "M10a1a"}}` | 有 `mt`、`y`两个单倍群数据，女性无 `y` 字段 |
 | ancestry | 祖源 | `"ancestry": {"block": {"xxx": "0.25"}, "area": {"xxx": "0.2"}}` | `block` 为大区域祖源数据，`area` 为小区域祖源数据，值存储为字符串格式 |
 
 - 祖源数据中，各大区域的可能值如下表——
