@@ -14,7 +14,7 @@
 - 查看[示例代码](https://github.com/wegene-llc/weapp-developer-guide/tree/master/examples)快速开始开发
 - 下载[测试数据](https://github.com/wegene-llc/weapp-developer-guide/tree/master/data)测试你的应用
 - **更好地，你可以使用轻应用的[命令行工具](https://github.com/wegene-llc/wegene-weapp-cli)一键生成、测试和打包你的轻应用，无需再手工下载示例代码、生成测试数据**
-- 测试阶段需要[邮件](mailto:api@wegene.com?subject=轻应用开发者权限申请)申请开发者权限
+- 测试阶段需要[邮件](mailto:api@wegene.com?subject=轻应用开发者权限申请)申请开发者权限，**申请时请您在邮件中提供您在 WeGene 网站的注册信息与您的开发想法。**
 - 查阅[发布指南](https://github.com/wegene-llc/weapp-developer-guide/blob/master/docs/weapp-publish-guide.md)发布应用
 
 ---
