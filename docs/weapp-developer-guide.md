@@ -160,7 +160,7 @@ suppressMessages(library(rjson))
 
 | 字段名 | 字段说明 | 举例 | 值选项 |
 |:-----:|:----:|:----:|:----:|
-| format | 基因数据的格式 | `"format": "wegene_affy_2"` | `wegene_affy_2`, `23andme`, `ancestry`, `ancestry_2` |
+| format | 基因数据的格式 | `"format": "wegene_affy_2"` | `wegene_affy_2`, `wegene_fire_2`, `wegene_wgs_1`, `23andme`, `23andme_5`, `ancestry`, `ancestry_2`, `ancestry_3` |
 | data | `gzip` 压缩并经过了 `base64` 编码的全部位点数据，需要配合`index`文件解析 | `"data": "xfgakljdflkja..."` | |
 | RSxxxxx | 某个RS位点上的基因型数据，**请注意：`RS`为大写，且在请求的某个位点没有检测（非未检出）的情况下，不会被返回** | `"RS671": "AA"（正常返回）`、`"RS672": "--"（未检出）` | |
 | sex | 性别 | `"sex": 1` | `0`（缺失）, `1`（男）, `2`（女） |
