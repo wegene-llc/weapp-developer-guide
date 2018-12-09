@@ -1,6 +1,6 @@
 # WeGene 微解读专业版（轻应用）开发指南 #
 
-轻应用是 WeGene 为生物信息开发者提供的轻量级基因应用的开发引擎，旨在帮助生物信息开发者在不使用 WeGene 开放平台 API 的情况下利用脚本语言来直接开发各种基因数据分析应用并相应部署到 WeGene 平台上。在测试阶段，每一个轻应用均可以被用户从 WeGene 的[微解读](https://www.wegene.com/crowdsourcing/)页面中免费使用，但未来我们会逐步开放轻应用的收费和开发者分成的功能。现阶段，轻应用支持 `Python 2.7` 及 `R` 语言。
+轻应用是 WeGene 为生物信息开发者提供的轻量级基因应用的开发引擎，旨在帮助生物信息开发者在不使用 WeGene 开放平台 API 的情况下利用脚本语言来直接开发各种基因数据分析应用并相应部署到 WeGene 平台上。每一个轻应用均可以被用户从 WeGene 的[微解读](https://www.wegene.com/crowdsourcing/)页面中使用。开发者可以将其应用设置为收费模式，或用户可以对开发者进行打赏。当前阶段，WeGene 将不会对应用收益进行任何费用收取，开发者可将全部收益进行提现。目前，轻应用支持 `Python 2.7` 及 `R` 语言。
 
 轻应用的开发基于统一的数据输入/输出接口。开发者无需关注实现用户数据授权、应用部署、运维等问题，只需专注一件事：**开发核心的基因数据分析算法和应用**。
 
@@ -14,8 +14,9 @@
 - 查看[示例代码](https://github.com/wegene-llc/weapp-developer-guide/tree/master/examples)快速开始开发
 - 下载[测试数据](https://github.com/wegene-llc/weapp-developer-guide/tree/master/data)测试你的应用
 - **更好地，你可以使用轻应用的[命令行工具](https://github.com/wegene-llc/wegene-weapp-cli)一键生成、测试和打包你的轻应用，无需再手工下载示例代码、生成测试数据**
-- 测试阶段需要[邮件](mailto:api@wegene.com?subject=轻应用开发者权限申请&body=WeGene注册账号：%0d%0a要开发的轻应用（简述）：%0d%0a微信号（提供后可邀请您加入支持群）：)申请开发者权限，**申请时请您在邮件中提供您在 WeGene 网站的注册信息与您的开发想法。**
+- 开发者权限需要[邮件](mailto:api@wegene.com?subject=轻应用开发者权限申请&body=WeGene注册账号：%0d%0a要开发的轻应用（简述）：%0d%0a微信号（提供后可邀请您加入支持群）：)申请开发者权限，**申请时请您在邮件中提供您在 WeGene 网站的注册信息与您的开发想法。**
 - 查阅[发布指南](https://github.com/wegene-llc/weapp-developer-guide/blob/master/docs/weapp-publish-guide.md)发布应用
+- 查阅[WeGene 开发者协议](https://www.wegene.com/?/page/developers_agreement)，了解你的权益。
 
 ---
 
