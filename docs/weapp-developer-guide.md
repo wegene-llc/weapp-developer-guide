@@ -164,7 +164,7 @@ suppressMessages(library(rjson))
 |:-----:|:----:|:----:|:----:|
 | format | 基因数据的格式 | `"format": "wegene_affy_2"` | `wegene_affy_2`, `wegene_fire_2`, `wegene_wgs_1`, `23andme`, `23andme_5`, `ancestry`, `ancestry_2`, `ancestry_3` |
 | data | `gzip` 压缩并经过了 `base64` 编码的全部位点数据，需要配合`index`文件解析 | `"data": "xfgakljdflkja..."` | |
-| RSxxxxx | 某个RS位点上的基因型数据，**请注意：`RS`为大写，且在请求的某个位点没有检测（非未检出）的情况下，不会被返回** | `"RS671": "AA"（正常返回）`、`"RS672": "--"（未检出）` | |
+| RSxxxxx | 某个RS位点上的基因型数据，**请注意：`RS`为大写，且在请求的某个位点没有检测（非未检出）的情况下，不会被返回** | `"RS671": "AA"（正常返回）`、`"RS672": "--"（未检出）`, `"RS673": "__" （未检测，仅针对23andme格式数据）` | |
 | sex | 性别 | `"sex": 1` | `0`（缺失）, `1`（男）, `2`（女） |
 | age | 年龄数据 | `"age": 27` | 用户填写的年龄，如果大于`100`说明用户未填写 | |
 | haplogroup | 单倍群 | 男性：`"haplogroup": {"y": {"haplogroup": "O2a1c1a"}, "mt": {"haplogroup": "M10a1a"}}`, 女性：`"haplogroup": {"mt": {"haplogroup": "M10a1a"}}` | 有 `mt`、`y`两个单倍群数据，女性无 `y` 字段 |
@@ -231,6 +231,13 @@ suppressMessages(library(rjson))
 | pima | 美洲土著 |
 | mayan | 墨西哥玛雅人 |
 | papuan | 巴布亚人 |
+
+**注意：**
+
+对于获取单个位点时的数据，开发者需要注意：
+
+1. 需要首先对数据完整性、检测状态（未检测/未检出）进行判断判断：`if 'RS671' in input and input['RS671'] != '--' and input['RS671'] != '__'`
+2. 在杂合位点时，返回的结果可能是 `AB` 也可能是 `BB`，建议开发者统一对基因型进行排序：`rs671 = ''.join(sorted(input['RS671]))`
 
 **依据上面介绍的各个字段，根据申请应用时要求的入参，可以分为两种情况：**
 
