@@ -33,10 +33,10 @@ try:
     user_genome = process_raw_genome_data(inputs)
 
     # 如果输入的数据是部分位点数据，你可以直接进行使用，注意 RSID 是大写且要求的位点在没有检测
-    # 的情况下 key 可能不存在
+    # 的情况下 key 可能不存在，同时，对杂合位点按字母顺序进行排序以便后续方便处理
     # inputs = json.loads(body)['inputs']
-    # if 'RS671' in inputs.keys():
-    #   rs671 = inputs['RS671']
+    # if 'RS671' in inputs.keys() and inputs['RS671'] != '--' and inputs['RS671'] != '__':
+    #   rs671 = ''.join(sorted(inputs['RS671']))
 
     # 现在你可以开始根据输入数据进行实际的计算并输出结论了
     # result = do_something(user_genome)
