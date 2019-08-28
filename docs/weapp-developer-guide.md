@@ -313,7 +313,7 @@ suppressMessages(library(rjson))
 
 #### 4.4 使用 Markdown 输出轻应用结果 ####
 
-当开发者需要输出较复杂的结论时，可以使用 **Markdown** 语法对输出结果进行优化以增强用户体验。在新建轻应用时，只需要选择 `结论以Markdown输出` 选项即可使用该特性。当前，Markdown 中支持的语法包括标题（H1-H5）、粗体（B）、斜体（I）、强调文本（Code）、表格（Table）、图片（Img）以及链接（A）。Markdown 对应在轻应用结果界面中的显示效果如下：
+当开发者需要输出较复杂的结论时，可以使用 **Markdown** 语法对输出结果进行优化以增强用户体验。在新建轻应用时，只需要选择 `结论以Markdown输出` 选项即可使用该特性。当前，Markdown 中支持的语法包括标题（H1-H5）、粗体（B）、斜体（I）、强调文本（Code）、分割线（HR）、表格（Table）、图片（Img）以及链接（A）。Markdown 对应在轻应用结果界面中的显示效果如下：
 
 ![Markdown](image/markdown.jpg)
 
