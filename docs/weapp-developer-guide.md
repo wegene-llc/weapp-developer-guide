@@ -319,7 +319,7 @@ suppressMessages(library(rjson))
 
 需要注意的是，目前我们不支持使用 **外链图片** 作为输出。所有输出的图片必须为代码包内的本地图片文件或使用代码直接生成的图片文件（以 base64 的形式输出）。下面是使用 Python 实现本地图片文件输出到 Markdown 结果的示例代码：
 
-```
+```python
 f = open('local_image.jpeg','rb') # 二进制方式打开本地图片文件
 image_b64 = base64.b64encode(f.read()) # 读取文件内容，转换为 base64 编码
 f.close()
