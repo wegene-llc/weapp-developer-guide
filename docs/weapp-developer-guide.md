@@ -66,7 +66,7 @@ weapp_example_r.zip
 
 **请注意，使用 R 语言时脚本文件的后缀名`.R`必须为大写字母。**
 
-![如何打包工程](http://ok2je8vp1.bkt.clouddn.com/archive-project.png)
+![如何打包工程](image/archive-project.png)
 
 #### 4.1 主计算脚本 ####
 
