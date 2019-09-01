@@ -6,7 +6,7 @@
 
 #### 1. 说明 ####
 
-轻应用是 WeGene 为生物信息开发者提供的轻量级基因应用的开发引擎，帮助生物信息开发者在不使用 WeGene 开放平台 API 的情况下利用脚本语言来直接开发各种基因数据分析应用并相应部署到 WeGene 平台上。在测试阶段，所有的轻应用均可被 WeGene 用户免费使用，但未来我们会逐步开放轻应用的收费和开发者分成的功能。目前，轻应用支持 `Python 2.7` 及 `R` 语言。
+轻应用是 WeGene 为生物信息开发者提供的轻量级基因应用的开发引擎，帮助生物信息开发者在不使用 WeGene 开放平台 API 的情况下利用脚本语言来直接开发各种基因数据分析应用并相应部署到 WeGene 平台上。在测试阶段，所有的轻应用均可被 WeGene 用户免费使用，但未来我们会逐步开放轻应用的收费和开发者分成的功能。目前，轻应用支持 `Python 2.7`、`Python 3.6` 及 `R` 语言。
 
 ---
 
@@ -86,7 +86,7 @@ try:
     result = do_something(inputs)
 
    # 输出结果
-    print result
+    print(result)
 except Exception as e:
     # 输出计算过程中的异常
     sys.stderr.write(e.message)
@@ -329,7 +329,7 @@ result ='''
 ![image](data:image/jpeg;base64,{})
 '''.format(image_b64)
 
-print result
+print(result)
 ```
 
 **为了保证展示效果，图片的宽度需要不低于 440px。**
