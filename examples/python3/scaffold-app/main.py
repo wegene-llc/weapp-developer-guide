@@ -8,6 +8,7 @@ import json
 # wegene_utils 库会包含在每个应用的环境当中，无需自行打包上传
 # 这里提供源代码以供应用完整运行
 from wegene_utils import process_raw_genome_data
+from wegene_utils import is_genotype_exist
 
 '''
 当输入是部分位点时, 基因位点数据以 json 形式输入:
@@ -35,7 +36,7 @@ try:
     # 如果输入的数据是部分位点数据，你可以直接进行使用，注意 RSID 是大写且要求的位点在没有检测
     # 的情况下 key 可能不存在，同时，对杂合位点按字母顺序进行排序以便后续方便处理
     # inputs = json.loads(body)['inputs']
-    # if 'RS671' in inputs and inputs['RS671'] != '--' and inputs['RS671'] != '__':
+    # if is_genotype_exist(inputs, 'RS671'):
     #   rs671 = ''.join(sorted(inputs['RS671']))
 
     # 现在你可以开始根据输入数据进行实际的计算并输出结论了

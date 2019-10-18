@@ -54,3 +54,7 @@ def process_raw_genome_data(raw_inputs):
                             sys.exc_info()[-1].tb_frame.f_code.co_filename,
                             sys.exc_info()[-1].tb_lineno)
                          + e.message)
+
+
+def is_genotype_exist(input, rsid):
+    return rsid in inputs.keys() and inputs[rsid] != '--' and inputs[rsid] != '__'
