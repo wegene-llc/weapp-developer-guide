@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+
+__all__ = ['process_raw_genome_data', 'is_genotype_exist']
+
 import sys
 import gzip
 import base64
