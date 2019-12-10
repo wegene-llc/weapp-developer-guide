@@ -60,4 +60,8 @@ def process_raw_genome_data(raw_inputs):
 
 
 def is_genotype_exist(input, rsid):
-    return rsid in inputs.keys() and inputs[rsid] != '--' and inputs[rsid] != '__'
+    return rsid in input and input[rsid] != '--' and input[rsid] != '__'
+
+
+def is_wegene_format(format_str):
+    return 'wegene_' in format_str
