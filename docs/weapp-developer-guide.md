@@ -169,7 +169,35 @@ suppressMessages(library(rjson))
 | sex | 性别 | `"sex": 1` | `0`（缺失）, `1`（男）, `2`（女） |
 | age | 年龄数据 | `"age": 27` | 用户填写的年龄，如果大于`100`说明用户未填写 | |
 | haplogroup | 单倍群 | 男性：`"haplogroup": {"y": {"haplogroup": "O2a1c1a"}, "mt": {"haplogroup": "M10a1a"}}`, 女性：`"haplogroup": {"mt": {"haplogroup": "M10a1a"}}` | 有 `mt`、`y`两个单倍群数据，女性无 `y` 字段 |
+| haplotype | 基因单倍型 | `{"CYP2C9": ["*1", "*1"], "G6PD": ["B (wildtype)"], "CYP2B6": ["*1", "*1"], "HLA-A": ["24:02", "02:07"], "HLA-B": ["55:02", "46:01"], ...}` | 用户在一些基因上的单倍型分型，可用的基因单倍型见下表 |
 | ancestry | 祖源 | `"ancestry": {"block": {"xxx": "0.25"}, "area": {"xxx": "0.2"}}` | `block` 为大区域祖源数据，`area` 为小区域祖源数据，值存储为字符串格式 |
+
+- 基因单倍型中，可用的基因单倍型如下表——
+
+| 基因名 | 说明 |
+|:-----:|:----:|
+| CYP2C9 |  |
+| VKORC1 |  |
+| CYP2B6 |  |
+| NAT2 |  |
+| CYP3A5 |  |
+| NUDT15 |  |
+| G6PD | 如果是男性则只有一个分型结果 |
+| CYP4F2 |  |
+| RYR1 |  |
+| CFTR |  |
+| DPYD |  |
+| CYP2D6 |  |
+| UGT1A1 |  |
+| IFNL3 |  |
+| CYP2C19 |  |
+| TPMT |  |
+| CACNA1S |  |
+| HLA-A | 如未检出，分型结果为 "--" |
+| HLA-B | 如未检出，分型结果为 "--" |
+| HLA-C | 如未检出，分型结果为 "--" |
+| HLA-DQB1 | 如未检出，分型结果为 "--" |
+| HLA-DRB1 | 如未检出，分型结果为 "--" |
 
 - 祖源数据中，各大区域的可能值如下表——
 
