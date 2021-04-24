@@ -87,7 +87,7 @@ def Get_Simple_MT(length):
         counter = 0
         Simple_mt = ''
         while length - 1 == counter:
-            if isinstance(counter,int) == True:
+            if isinstance(counter/2,int) == True:
                 Simple_mt += letter_list[counter]
                 counter += 1
             else:
@@ -118,7 +118,7 @@ def Get_Simple_Y(length):
         counter = 0
         Simple_y = ''
         while length - 1 == counter:
-            if isinstance(counter,int) == True:
+            if isinstance(counter/2,int) == True:
                 Simple_y += letter_list[counter]
                 counter += 1
             else:
