@@ -5,6 +5,7 @@ __all__ = ['process_raw_genome_data', 'is_genotype_exist', 'is_wegene_format']
 import sys
 import gzip
 import base64
+import re
 from io import BytesIO
 
 
@@ -65,3 +66,61 @@ def is_genotype_exist(input, rsid):
 
 def is_wegene_format(format_str):
     return 'wegene_' in format_str
+
+#这是一个获取用户mt单倍群的函数
+def Get_MT():
+    body = sys.stdin.read()
+    inputs = json.loads(body)['inputs']
+    user_mt = inputs['haplogroup']['mt']['haplogroup']
+    return user_mt
+
+#这是一个可以获取用户Simple mt的函数，其中length值表示想要去的单倍群长度，例如length为2，用户的单倍群是A8a1，则Simple mt为A8
+def Get_Simple_MT(length):
+    Get_MT()
+    if len(user_mt) == 1:
+        Simple_mt = user_mt
+    elif "'" in user_mt:
+        Simple_mt = user_mt
+    else:
+        letter_list = re.split('\d',user_mt)
+        number_list = re.split('\D',user_mt)
+        counter = 0
+        Simple_mt = ''
+        while length - 1 == counter:
+            if isinstance(counter,int) == True:
+                Simple_mt += letter_list[counter]
+                counter += 1
+            else:
+                Simple_mt += number_list[counter]
+    return Simple_mt
+
+#这是一个获取用户y单倍群的函数
+def Get_Y():
+    body = sys.stdin.read()
+    inputs = json.loads(body)['inputs']
+    user_gender = inputs['sex']
+    if user_gender == 1:
+        user_y = inputs['haplogroup']['y']['haplogroup']
+        return user_y
+    elif user_gender == 2:
+        sys.stderr.write('女性没有Y染色体哦～')
+    else:
+        sys.stderr.write('性别数据缺失')
+
+#这是一个可以获取用户Simple y的函数，其中length值表示想要去的单倍群长度，例如length为3，用户的单倍群是O2a2b1a1b，则Simple y为O2a
+def Get_Simple_Y(length):
+    Get_Y()
+    if len(user_y) == 1:
+        Simple_y = user_y
+    else:
+        letter_list = re.split('\d',user_y)
+        number_list = re.split('\D',user_y)
+        counter = 0
+        Simple_y = ''
+        while length - 1 == counter:
+            if isinstance(counter,int) == True:
+                Simple_y += letter_list[counter]
+                counter += 1
+            else:
+                Simple_y += number_list[counter]
+    return Simple_y
