@@ -71,7 +71,11 @@ def is_wegene_format(format_str):
 def Get_MT():
     body = sys.stdin.read()
     inputs = json.loads(body)['inputs']
-    user_mt = inputs['haplogroup']['mt']['haplogroup']
+    if 'haplogroup' in inputs:
+        user_mt = inputs['haplogroup']['mt']['haplogroup']
+    else:
+        sys.stderr.write('无法获取您的MT数据，请联系作者解决')
+        exit(2)
     return user_mt
 
 #这是一个可以获取用户Simple mt的函数，其中length值表示想要去的单倍群长度，例如length为2，用户的单倍群是A8a1，则Simple mt为A8
@@ -98,7 +102,11 @@ def Get_Simple_MT(length):
 def Get_Y():
     body = sys.stdin.read()
     inputs = json.loads(body)['inputs']
-    user_gender = inputs['sex']
+    if 'haplogroup' in inputs:
+        user_gender = inputs['sex']
+    else:
+        sys.stderr.write('无法获取您的Y数据，请联系作者解决')
+        exit(2)
     if user_gender == 1:
         user_y = inputs['haplogroup']['y']['haplogroup']
         return user_y
