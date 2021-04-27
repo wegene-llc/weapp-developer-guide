@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-__all__ = ['process_raw_genome_data', 'is_genotype_exist', 'is_wegene_format']
+__all__ = ['process_raw_genome_data', 'is_genotype_exist', 'is_wegene_format', 'get_mt', 'get_y', 'to_markdown_table']
 
 import sys
 import gzip
