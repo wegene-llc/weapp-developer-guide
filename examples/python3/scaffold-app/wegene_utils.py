@@ -5,7 +5,6 @@ __all__ = ['process_raw_genome_data', 'is_genotype_exist', 'is_wegene_format']
 import sys
 import gzip
 import base64
-import re
 from io import BytesIO
 
 
@@ -67,68 +66,61 @@ def is_genotype_exist(input, rsid):
 def is_wegene_format(format_str):
     return 'wegene_' in format_str
 
-#这是一个获取用户mt单倍群的函数
-def Get_MT():
-    body = sys.stdin.read()
-    inputs = json.loads(body)['inputs']
-    if 'haplogroup' in inputs:
-        user_mt = inputs['haplogroup']['mt']['haplogroup']
-    else:
-        sys.stderr.write('无法获取您的MT数据，请联系作者解决')
-        exit(2)
-    return user_mt
 
-#这是一个可以获取用户Simple mt的函数，其中length值表示想要去的单倍群长度，例如length为2，用户的单倍群是A8a1，则Simple mt为A8
-def Get_Simple_MT(length):
-    Get_MT()
-    if len(user_mt) == 1:
-        Simple_mt = user_mt
-    elif "'" in user_mt:
-        Simple_mt = user_mt
-    else:
-        letter_list = re.split('\d',user_mt)
-        number_list = re.split('\D',user_mt)
-        counter = 0
-        Simple_mt = ''
-        while length - 1 == counter:
-            if isinstance(counter/2,int) == True:
-                Simple_mt += letter_list[counter]
-                counter += 1
-            else:
-                Simple_mt += number_list[counter]
-    return Simple_mt
+#这是一个获取用户mt单倍群的函数
+def get_mt(inputs):
+    return inputs['haplogroup']['mt']['haplogroup']
+
 
 #这是一个获取用户y单倍群的函数
-def Get_Y():
-    body = sys.stdin.read()
-    inputs = json.loads(body)['inputs']
-    if 'haplogroup' in inputs:
-        user_gender = inputs['sex']
-    else:
-        sys.stderr.write('无法获取您的Y数据，请联系作者解决')
-        exit(2)
-    if user_gender == 1:
-        user_y = inputs['haplogroup']['y']['haplogroup']
-        return user_y
-    elif user_gender == 2:
-        sys.stderr.write('女性没有Y染色体哦～')
-    else:
-        sys.stderr.write('性别数据缺失')
+def get_y(inputs):
+    return inputs['haplogroup']['y']['haplogroup']
 
-#这是一个可以获取用户Simple y的函数，其中length值表示想要去的单倍群长度，例如length为3，用户的单倍群是O2a2b1a1b，则Simple y为O2a
-def Get_Simple_Y(length):
-    Get_Y()
-    if len(user_y) == 1:
-        Simple_y = user_y
-    else:
-        letter_list = re.split('\d',user_y)
-        number_list = re.split('\D',user_y)
-        counter = 0
-        Simple_y = ''
-        while length - 1 == counter:
-            if isinstance(counter/2,int) == True:
-                Simple_y += letter_list[counter]
-                counter += 1
-            else:
-                Simple_y += number_list[counter]
-    return Simple_y
+
+#这是一个将嵌套list转化为markdown表格形式的函数
+def to_markdown_table(input_head,input_body,output_style):
+    result_list = []
+    column_num = len(input_head)
+    for row in input_body:
+        element_list = []
+        for element in row:
+            element_list.append(str(element))
+        result_list.append('|'+'|'.join(element_list))
+        body_md = '|\n'.join(result_list)+'|'
+    if output_style == 'left':
+        style = [':---']
+    if output_style == 'right':
+        style = ['---:']
+    if output_style == 'center':
+        style = [':---:']
+    element_list = []
+    for element in input_head:
+        element_list.append(str(element))
+    head_md = '|'+'|'.join(element_list)+'|\n'
+    style_md = '|'+'|'.join(style * column_num)+'|\n'
+    result = head_md + style_md + body_md
+    return result
+'''
+在 to_markdown_table(input_head,input_body,output_style)函数中
+input_head,input_body,input_type,output_style分别指的是 表格的表头 表格内容 以及 文字风格
+文字风格 有三种选择，可以是 left right 或 center 分别代表 文字左对齐 文字右对齐 和 文字居中
+如果输出结果中包含 整型 或 浮点型 无需对结果进行 str() 处理，函数中会自动处理
+
+调用本函数的示例代码如下：
+
+head = [1,2,3,4,5]
+body = [
+    [7,8,9,0,1],
+    [4,7,9,10,4]
+]
+result = to_markdown_table(head,body,'lists','center')
+print(result)
+
+本段代码输出结果如下
+
+|1|2|3|4|5|
+|:---:|:---:|:---:|:---:|:---:|
+|7|8|9|0|1|
+|4|7|9|10|4|
+
+'''
