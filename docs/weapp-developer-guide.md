@@ -138,6 +138,18 @@ scipy==0.18.1
 ```
 pacman::p_load(base64enc, R.utils, rjson)
 ```
+需要注意的是第三方依赖库的版本需要支持Python 3.6，下面汇总了部分常用库支持此版本的最新版本：
+|库|版本|
+|:---:|:---:|
+|numpy|1.19.5|
+|numba|0.53.1|
+|pandas|1.1.5|
+|matplotlib|3.3.4|
+|scipy|1.5.4|
+|sklearn|0.24.2|
+|biopython|1.79|
+
+参考网站：<https://pypi.org>
 
 然后可以在计算脚本中引入这些依赖——
 
