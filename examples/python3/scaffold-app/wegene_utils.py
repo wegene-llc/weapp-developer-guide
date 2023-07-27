@@ -49,7 +49,7 @@ def parse_genome_string(genome_str, genome_format):
 def process_raw_genome_data(raw_inputs):
     try:
         genome = str(gzip.GzipFile(fileobj=BytesIO(
-                    base64.b64decode(raw_inputs['data']))).read())
+                    base64.b64decode(raw_inputs['data']))).read(), encoding="utf8")
         genome_format = raw_inputs['format']
         return parse_genome_string(genome, genome_format)
     except Exception as e:
